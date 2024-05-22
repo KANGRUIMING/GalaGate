@@ -1,2 +1,5 @@
 .DS_Store
 /venv
+package-lock.json
+Lottery/package-lock.json
+Lottery/node_modules
