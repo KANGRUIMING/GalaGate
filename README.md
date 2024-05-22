@@ -11,6 +11,8 @@ Second, run the development server:
 
 ```bash
 cd Backend
+pip install flask
+pip install -U flask-cors
 python3 server.py
 ```
 Third, cd into client and install dependencies:
