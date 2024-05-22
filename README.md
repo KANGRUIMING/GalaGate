@@ -3,13 +3,14 @@ To activate the program locally, please first type the following command in the 
 First, cd into server and create the virtual environment:
 
 ```bash
-python3 -m venv venv
+python -m venv venv
 
-source venv/bin/activate
+venv\bin\activate
 ```
 Second, run the development server:
 
 ```bash
+cd Backend
 python3 server.py
 ```
 Third, cd into client and install dependencies:
