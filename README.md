@@ -5,7 +5,7 @@ First, cd into server and create the virtual environment:
 ```bash
 python -m venv venv
 
-venv\bin\activate
+venv\Scripts\activate
 ```
 Second, run the development server:
 
