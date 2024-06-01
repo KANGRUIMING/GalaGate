@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Nav from './layout';
@@ -8,11 +8,11 @@ export default function Home() {
     const [pressed, setPressed] = useState(false);
     const router = useRouter();
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setPressed(true);
 
@@ -28,7 +28,8 @@ export default function Home() {
             const data = await response.json();
 
             if (response.ok && data.exist) {
-                // Redirect to the ResultPage with the lottery_number and won status as query parameters
+                 // Redirect to the ResultPage with the lottery_number and won status as query parameters
+
                 router.push({
                     pathname: '/result',
                     query: {
@@ -37,12 +38,12 @@ export default function Home() {
                     }
                 });
             } else {
-                setPressed(false); // Reset pressed state to allow retry
+                setPressed(false);
                 alert('No record found for the provided email.');
             }
         } catch (error) {
             console.error('Error:', error);
-            setPressed(false); // Reset pressed state to allow retry
+            setPressed(false);
         }
     };
 
